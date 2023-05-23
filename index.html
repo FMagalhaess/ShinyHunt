@@ -5,30 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <header>
-        Pokémon:
-        <input type="text">
-        <div id="telas">
-            Telas:
-            <button id="decrease-screen">-</button>
-            <button id="increase-screen">+</button>
+    <div class="centro">
+        <header>
+            <div>
+                <p class="tittle">Pokémon:</p>
+                <input type="text">
+                <button class="btn btn-primary">Search</button>
+            </div>
+            <div id="botoes">
+                <div id="telas" class="classudo">
+                    <p class="tittle">Telas:</p>
+                    <div class="center">
+                        <button class="btn btn-primary d-inline-flex align-items-center" id="increase-screen">+</button>
+                        <button class="btn btn-outline-secondary d-inline-flex align-items-center" id="decrease-screen">-</button>
+                    </div>
+                </div>
+                <div id="fases" class="classudo">
+                    <p class="tittle">Fase:</p>
+                    <div class="center">
+                        <button class="btn btn-primary d-inline-flex align-items-center" id="increase-phase">+</button>
+                        <button class="btn btn-outline-secondary d-inline-flex align-items-center" id="decrease-phase">-</button>
+                
+                    </div>
+                </div>
+                <div id="encontros" class="classudo">
+                    <p class="tittle">Ecounters:</p>
+                    <div class="center">
+                        <button class="btn btn-primary d-inline-flex align-items-center" id="increase-encouter">+</button>
+                        <button class="btn btn-outline-secondary d-inline-flex align-items-center" id="decrease-encouter">-</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="reset-button">Reset</button>
+    
+        </header>
+    </div>
+    <section>
+        <div id="encounters">
+            Encontros:
         </div>
-        <div id="telas">
+        <div id="phases">
             Fase:
-            <button id="decrease-phase">-</button>
-            <button id="increase-phase">+</button>
         </div>
-        <div id="telas">
-            Ecounters:
-            <button id="decrease-encouter">-</button>
-            <button id="increase-encouter">+</button>
+    </section>
+    <footer>
+        <div class="centro">
+            <img src="https://pokemon.night.coffee/icons/shiny/mudkip.gif" alt="">
         </div>
-        <button id="reset-button">Reset</button>
-
-    </header>
+    </footer>
     <script type="module" src="./src/main.js"></script>
 </body>
 </html>
