@@ -27,18 +27,19 @@ const decreaseScreen = () => {
   screensNumber = screensNumber - 1;
   screenCounter.innerHTML = `Telas: ${screensNumber}`;
   console.log(screensNumber);
+  localStorage.setItem("screensNumber", screensNumber);
 };
 const increasePhase = () => {
     phase = phase + 1
     phaseCounter.innerHTML = `Fase: ${phase}`
     console.log(phase);
     localStorage.setItem("phase", phase);
-
 };
 const decreasePhase = () => {
   phase = phase - 1;
   phaseCounter.innerHTML = `Fase: ${phase}`;
   console.log(phase);
+  localStorage.setItem("phase", phase);
 };
 const increaseEncounter = () => {
     encounter = encounter + screensNumber
@@ -51,15 +52,35 @@ const decreaseEncounter = () => {
   encounter = encounter - screensNumber;
   encountersCounter.innerHTML = `Encontros: ${encounter}`;
   console.log(encounter);
+  localStorage.setItem("encounter", encounter);
 };
 const resetEncounter = () => {
     encountersCounter.innerHTML = `Encontros: 0`;
     encounter = 0
+    localStorage.setItem("encounter", encounter);
 }
 const searchPokemon = () => {
 pokeImage.src = `https://pokemon.night.coffee/icons/shiny/${searchBar.value}.gif`;
 showedPokemon = `https://pokemon.night.coffee/icons/shiny/${searchBar.value}.gif`;
 localStorage.setItem("showedPokemon", showedPokemon);
+}
+
+if (localStorage.getItem("screensNumber") !== null) {
+  screensNumber = parseInt(localStorage.getItem("screensNumber"));
+  screenCounter.innerHTML = `Telas: ${screensNumber}`;
+
+}
+if (localStorage.getItem("phase") !== null) {
+  phase = parseInt(localStorage.getItem("phase"));
+  phaseCounter.innerHTML = `Fase: ${phase}`;
+}
+if (localStorage.getItem("encounter") !== null) {
+  encounter =parseInt(localStorage.getItem("encounter"));
+  encountersCounter.innerHTML = `Encontros: ${encounter}`;
+}
+if (localStorage.getItem("showedPokemon") !== null) {
+  showedPokemon = localStorage.getItem("showedPokemon");
+  pokeImage.src = showedPokemon
 }
 
 phaseIncreaseButton.addEventListener("click", increasePhase);
